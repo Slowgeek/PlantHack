@@ -10,7 +10,7 @@ var corsOptions = {
 };
 
 app.use(cors(corsOptions));
-mongoose.connect("mongodb://localhost:27017/OctohackDB", {
+mongoose.connect(process.env.MongoURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
