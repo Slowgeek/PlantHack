@@ -15,6 +15,10 @@ const User = mongoose.model(
       type: String,
       required: true,
     },
+    points:{
+      type:Number,
+      required: true,
+    }
   })
 );
 

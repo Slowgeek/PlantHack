@@ -1,5 +1,6 @@
 const verifySignUp = require("../middlewares/verifySignUp");
 const controller = require("../controllers/auth.controller");
+const User = require("../models/user.model");
 
 module.exports = function (app) {
   app.use(function (req, res, next) {
@@ -17,6 +18,20 @@ module.exports = function (app) {
     [verifySignUp.checkDuplicateUsernameOrEmail],
     controller.signup
   );
+
+  app.get("/leader", (req, res) => {
+    User
+      .find()
+      .sort({points: -1})
+      .then((result) => {
+        res.send(result);
+        console.log("leaderboard");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  });
+  
 
   app.post("/signin", controller.signin);
 };
