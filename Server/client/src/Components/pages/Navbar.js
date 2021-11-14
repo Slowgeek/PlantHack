@@ -10,6 +10,12 @@ function Navbar() {
       return (
         <div className={` mr-0`}>
           <Link
+            to="/profile"
+            className=" hover:bg-gray-700  px-8 py-2 rounded-md  font-medium"
+          >
+            Profile
+          </Link>
+          <Link
             to="/forum"
             className=" hover:bg-gray-700  px-8 py-2 rounded-md  font-medium"
           >
@@ -58,7 +64,6 @@ function Navbar() {
           >
             Signup
           </button>
-
         </>
       );
     }
