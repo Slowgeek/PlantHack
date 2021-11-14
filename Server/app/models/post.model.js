@@ -3,7 +3,7 @@ const postSchema = new mongoose.Schema(
   {
     location: {
       type: String,
-      required: true,
+      // required: true,
     },
     photo: {
       type: String,

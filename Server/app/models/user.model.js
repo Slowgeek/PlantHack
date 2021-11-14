@@ -18,6 +18,7 @@ const User = mongoose.model(
     points:{
       type:Number,
       required: true,
+      default:100
     }
   })
 );
